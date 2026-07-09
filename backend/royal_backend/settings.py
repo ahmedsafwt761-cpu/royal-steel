@@ -12,7 +12,7 @@ if not SECRET_KEY:
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,*.onrender.com").split(",")
 
 # ==================== APPS ====================
 INSTALLED_APPS = [
@@ -62,27 +62,14 @@ TEMPLATES = [
 WSGI_APPLICATION = "royal_backend.wsgi.application"
 
 # ==================== DATABASE ====================
-DB_ENGINE = os.getenv("DB_ENGINE", "sqlite3")
+import dj_database_url
 
-if DB_ENGINE == "postgresql":
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("DB_NAME", "royal_db"),
-            "USER": os.getenv("DB_USER", "royal_user"),
-            "PASSWORD": os.getenv("DB_PASSWORD", ""),
-            "HOST": os.getenv("DB_HOST", "localhost"),
-            "PORT": os.getenv("DB_PORT", "5432"),
-        }
-    }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-
+DATABASES = {
+    "default": dj_database_url.config(
+        default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),
+        conn_max_age=600,
+    )
+}
 # ==================== INTERNATIONALIZATION ====================
 LANGUAGE_CODE = "ar"
 TIME_ZONE = "Africa/Cairo"
@@ -101,11 +88,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ==================== CORS ====================
-CORS_ALLOW_ALL_ORIGINS = DEBUG
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins for now - change in production
 
 CORS_ALLOWED_ORIGINS = os.getenv(
     "CORS_ALLOWED_ORIGINS",
-    "http://localhost:5500,http://127.0.0.1:5500"
+    "http://localhost:5500,http://127.0.0.1:5500,https://royal-steel.vercel.app"
 ).split(",")
 
 CORS_ALLOW_CREDENTIALS = True
@@ -119,6 +106,14 @@ CORS_ALLOW_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
+]
+
+
+# ==================== CSRF ====================
+CSRF_TRUSTED_ORIGINS = [
+    "https://royal-steel.vercel.app",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
 ]
 
 # ==================== REST FRAMEWORK ====================
