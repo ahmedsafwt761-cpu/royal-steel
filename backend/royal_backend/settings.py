@@ -7,8 +7,10 @@ load_dotenv(BASE_DIR / ".env")
 
 # ==================== SECURITY ====================
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
-if not SECRET_KEY:
-    raise ValueError("DJANGO_SECRET_KEY not found in .env file!")
+# ==================== SECURITY ====================
+import secrets
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", secrets.token_urlsafe(50))
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
