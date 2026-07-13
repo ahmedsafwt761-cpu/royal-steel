@@ -1,4 +1,4 @@
-const API_BASE = "https://your-backend-url.com/api";
+const API_BASE = "https://royal-steel-backend.onrender.com/api";
 
 async function safeReadJson(response) {
   const text = await response.text();
