@@ -6,6 +6,6 @@ services:
     startCommand: python backend/startup.py && gunicorn royal_backend.wsgi:application
     envVars:
       - key: PYTHON_VERSION
-        value: 3.14.3
+        value: 3.12.0
       - key: DJANGO_SETTINGS_MODULE
         value: royal_backend.settings
