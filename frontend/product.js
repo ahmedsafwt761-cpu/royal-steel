@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.disabled = true;
 
       setTimeout(() => {
-        window.open(`https://wa.me/201225585826?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(`https://wa.me/201115709334?text=${encodeURIComponent(msg)}`, '_blank');
         showToast('تم فتح واتساب!', 'success');
         btn.innerHTML = original;
         btn.disabled = false;
