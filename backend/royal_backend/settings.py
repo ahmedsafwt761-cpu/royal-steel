@@ -14,7 +14,12 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", secrets.token_urlsafe(50))
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,*.onrender.com").split(",")
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'royal-steel-backend.onrender.com',
+    '*.onrender.com',
+]
 
 # ==================== APPS ====================
 INSTALLED_APPS = [
