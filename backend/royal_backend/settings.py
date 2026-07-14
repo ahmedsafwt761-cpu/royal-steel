@@ -12,7 +12,7 @@ import secrets
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", secrets.token_urlsafe(50))
 
-DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
