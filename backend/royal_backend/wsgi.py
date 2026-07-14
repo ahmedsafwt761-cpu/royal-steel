@@ -10,7 +10,7 @@ from django.core.management import call_command
 from django.contrib.auth.models import User
 
 try:
-    call_command('migrate', '--run-syncdb')
+    call_command('migrate')
     if not User.objects.filter(username='admin').exists():
         User.objects.create_superuser('admin', 'admin@royalsteel.com', 'admin123456')
         print('Superuser created!')
