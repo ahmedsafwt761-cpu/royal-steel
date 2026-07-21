@@ -41,5 +41,5 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 # Broken files
-backend/core/management/commands/migrate.py
-backend/core/management/commands/setup.py
+core/management/commands/migrate.py
+core/management/commands/setup.py
