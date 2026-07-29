@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Royal Steel Egypt | ماكينات تصنيع المنتجات الغذائية</title>
+    <link rel="canonical" href="https://royal-steel.vercel.app/" />
+    <meta name="theme-color" content="#d4a843" />
+
     <meta name="description" content="Royal Steel Egypt لتصنيع ماكينات وخطوط إنتاج المنتجات الغذائية مثل السجق واللانشون واللحوم المصنعة بجودة ستانلس 304. خبرة 16 سنوات، أكثر من 150 عميل سعيد." />
     <meta name="keywords" content="ماكينات غذائية, خطوط إنتاج, ستانلس 304, سجق, لانشون, لحوم مصنعة, تصنيع ماكينات, كسارة, ميكسر, مكبس, معدات مصانع" />
     <meta name="author" content="Royal Steel Egypt" />
@@ -28,8 +31,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d4a843'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='%23070a0f' font-weight='900'%3ERS%3C/text%3E%3C/svg%3E" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://royal-steel.vercel.app/" />
+    
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +47,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js" defer></script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
@@ -54,7 +63,7 @@
       "name": "Royal Steel Egypt",
       "description": "تصنيع ماكينات وخطوط إنتاج المنتجات الغذائية - ستانلس 304",
       "url": "https://royal-steel.vercel.app",
-      "telephone": "+201145553855",
+      "telephone": "+201115709334",
       "email": "royalsteelegypt@gmail.com",
       "address": {
         "@type": "PostalAddress",
@@ -63,7 +72,7 @@
       },
       "openingHours": "Sa-Th 09:00-18:00",
       "priceRange": "$$$",
-      "image": "https://royal-steel.vercel.app/images/logo.png",
+      "image": "https://royal-steel.vercel.app/images/logo.webp",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -71,10 +80,49 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ضمان الماكينة قد إيه؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "الضمان بيكون سنة كاملة من استلام الماكينة وبيكون ضد عيوب الصناعة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل بتجيبوا قطع غيار؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "أيوه، قطع الغيار متوفرة على مدار السنة — شفرات، موتورات، جوانات، لوحات كهربائية، وكل مايلزم."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "الماكينة بتتصنع في قد إيه؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "أغلب الماكينات مدة تصنيعها بتكون من 4 إلى 6 أسابيع على حسب الماكينة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل بتعملوا تركيب في المحافظات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "أيوه، بنركب في كل المحافظات — القاهرة، الإسكندرية، الدلتا، الصعيد، وسيناء."
+            }
+          }
+        ]
+      }
+    </script>
   
 
-<base target="_blank">
-</head>
+  </head>
 
   <body>
     <!-- Loading Screen -->
@@ -116,7 +164,7 @@
     <header class="header">
       <div class="container header__inner">
         <a class="brand" href="#" aria-label="Royal Steel Egypt - الصفحة الرئيسية">
-          <img src="images/logo.jpg" alt="Royal Steel Logo" class="brand__logo-img" width="48" height="48">
+          <img src="images/logo.webp" alt="Royal Steel Logo" class="brand__logo-img" width="48" height="48">
           <div class="brand__text">
             <div class="brand__name">Royal Steel</div>
             <div class="brand__tag">Food Processing Machinery</div>
@@ -136,8 +184,7 @@
             <li><a href="#services">الخدمات</a></li>
             <li><a href="#projects">أعمالنا</a></li>
             <li><a href="#faq">الأسئلة الشائعة</a></li>
-            <li><a href="#testimonials">آراء العملاء</a>
-            <!-- <a href="clients.html">عملاؤنا</a></li> -->
+            <li><a href="#testimonials">آراء العملاء</a></li>
             <li><a href="clients.html">عملاؤنا</a></li>
             <li><a class="btn btn--small" href="#contact">اطلب عرض سعر</a></li>
           </ul>
@@ -281,7 +328,7 @@
               <a href="ksara/ksara.html">
               <div class="machine-card">
                 <div class="machine-card__img">
-                  <img src="images/crusher.jpg" alt="كسارة لحوم ستانلس 304" loading="lazy" width="400" height="300">
+                  <img src="images/crusher.webp" alt="كسارة لحوم ستانلس 304" loading="lazy" width="400" height="300">
                 </div>
               </a>
                 <h3>كسارة</h3>
@@ -300,7 +347,7 @@
               <a href="mixer/mixer.html">
               <div class="machine-card">
                 <div class="machine-card__img">
-                  <img src="images/mixer.jpg" alt="ميكسر توابل ستانلس 304" loading="lazy" width="400" height="300">
+                  <img src="images/mixer.webp" alt="ميكسر توابل ستانلس 304" loading="lazy" width="400" height="300">
                 </div>
               </a>
                 <h3>ميكسر</h3>
@@ -319,7 +366,7 @@
               <a href="makbs/makbs.html">
               <div class="machine-card">
                 <div class="machine-card__img">
-                  <img src="images/press.jpg" alt="مكبس بسطرمة ستانلس 304" loading="lazy" width="400" height="300">
+                  <img src="images/press.webp" alt="مكبس بسطرمة ستانلس 304" loading="lazy" width="400" height="300">
                 </div>
               </a>
                 <h3>مكبس بسطرمة</h3>
@@ -403,7 +450,7 @@
             <!-- Video 1: خط الإنتاج الكامل -->
             <a href="https://www.facebook.com/share/v/1HG7iGwVNE/" target="_blank" rel="noreferrer" class="ph reveal video-card video-link" aria-label="تركيب خط إنتاج كامل - شغّل الفيديو">
               <div class="ph__img video-thumbnail">
-                <img src="images/projects/production-line.jpg" alt="تركيب خط إنتاج كامل - مصنع الأمل" loading="lazy" width="400" height="300">
+                <img src="images/projects/production-line.webp" alt="تركيب خط إنتاج كامل - مصنع الأمل" loading="lazy" width="400" height="300">
                 <div class="play-button">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                     <circle cx="30" cy="30" r="30" fill="rgba(212,168,67,0.9)"/>
@@ -421,7 +468,7 @@
             <!-- Video 2: ماكينة ميكسر -->
             <a href="https://www.facebook.com/share/r/18Yovermnf/" target="_blank" rel="noreferrer" class="ph reveal video-card video-link" aria-label="ماكينة ميكسر 500 لتر - شغّل الفيديو">
               <div class="ph__img video-thumbnail">
-                <img src="images/projects/mixer.jpg" alt="ماكينة ميكسر 500 لتر - شركة النور" loading="lazy" width="400" height="300">
+                <img src="images/projects/mixer.webp" alt="ماكينة ميكسر 500 لتر - شركة النور" loading="lazy" width="400" height="300">
                 <div class="play-button">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                     <circle cx="30" cy="30" r="30" fill="rgba(212,168,67,0.9)"/>
@@ -439,7 +486,7 @@
             <!-- Video 3: مكبس بسطرمة -->
             <a href="https://www.facebook.com/share/r/1C1rcp9iC3/" target="_blank" rel="noreferrer" class="ph reveal video-card video-link" aria-label="تركيب مكبس بسطرمة - شغّل الفيديو">
               <div class="ph__img video-thumbnail">
-                <img src="images/projects/press.jpg" alt="تركيب مكبس بسطرمة - مصنع الشرق" loading="lazy" width="400" height="300">
+                <img src="images/projects/press.webp" alt="تركيب مكبس بسطرمة - مصنع الشرق" loading="lazy" width="400" height="300">
                 <div class="play-button">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                     <circle cx="30" cy="30" r="30" fill="rgba(212,168,67,0.9)"/>
@@ -457,7 +504,7 @@
             <!-- Video 4: صيانة دورية -->
             <a href="https://www.facebook.com/share/r/1GEXxBmqnu/" target="_blank" rel="noreferrer" class="ph reveal video-card video-link" aria-label="صيانة دورية - شغّل الفيديو">
               <div class="ph__img video-thumbnail">
-                <img src="images/projects/shipping.jpg" alt="توصيل تصدير لتركيا - Royal Steel Egypt" loading="lazy" width="400" height="300">
+                <img src="images/projects/shipping.webp" alt="توصيل تصدير لتركيا - Royal Steel Egypt" loading="lazy" width="400" height="300">
                 <div class="play-button">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                     <circle cx="30" cy="30" r="30" fill="rgba(212,168,67,0.9)"/>
@@ -540,7 +587,7 @@
                 <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </button>
               <div class="faq-answer">
-                <p>كل ماكيناتنا مصممة معايير HACCP وسلامة الغذاء. سطح الستانلس 304 ناعم ومقاوم للتآكل، والأجزاء المتحركة بتتفك بسهولة للتنظيف العميق. 
+                <p>كل ماكيناتنا مصممة معايير HACCP وسلامة الغذاء. سطح الستانلس 304 ناعم ومقاوم للتآكل، والأجزاء المتحركة بتتفك بسهولة للتنظيف العميق.</p>
             </div>
           </div>
         </div>
@@ -561,7 +608,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"ماكينة الميكسر شغالة ممتاز من سنة ونص، جودة التصنيع عالية جداً والدعم الفني سريع. فريق محترم وبيعرفوا شغلهم."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/Nobaria.jpg" alt="مصنع نوبارية" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/Nobaria.webp" alt="مصنع نوبارية" loading="lazy"></div>
                     <div>
                       <div class="testimonial__name">مصنع نوبارية</div>
                       <!-- <div class="testimonial__company">مصنع الأمل للحوم - القاهرة</div> -->
@@ -574,7 +621,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"خط الإنتاج اللي ركبولنا غيّر شكل المصنع، الإنتاجية زادت 40% والجودة ثابتة. التزام في المواعيد والصيانة دورية."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/fresh-farm.jpg" alt="عميل" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/fresh-farm.webp" alt="عميل" loading="lazy"></div>
                     <div>
                       <div class="testimonial__name">مصنع فريش فارم</div>
                       <!-- <div class="testimonial__company">شركة النور للصناعات الغذائية - الإسكندرية</div> -->
@@ -587,7 +634,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"سعر منافس وجودة أوروبية، الستانلس 304 حقيقي ومش مجرد كلام. قطع الغيار متوفرة وأسعارها معقولة."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/Halwani Brothers.jpg" alt="أحمد عبدالله" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/Halwani Brothers.webp" alt="أحمد عبدالله" loading="lazy"></div>
                     <div>
                       <div class="testimonial__name">مصنع حلواني</div>
                       <!-- <div class="testimonial__company">مصنع الصفوة - طنطا</div> -->
@@ -600,7 +647,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"طلبت ماكينة مخصصة بمقاسات خاصة للمصنع وعملوها بالظبط اللي أنا عايزه. التسليم كان في الميعاد والتركيب محترم."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/Elhassan w Elhussein.jpg" alt="خالد محمود" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/Elhassan w Elhussein.webp" alt="خالد محمود" loading="lazy"></div>
                     <div>
                       <div class="testimonial__name">مصنع الحسن و الحسين</div>
                       <!-- <div class="testimonial__company">مصنع الشرق لللانشون - المنصورة</div> -->
