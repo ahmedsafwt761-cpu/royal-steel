@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔧 Royal Steel Egypt — Auto Fix Script
+ Royal Steel Egypt — Auto Fix Script
 =======================================
 بيصلح كل الأخطاء تلقائيًا في كل ملفات HTML
 
@@ -41,8 +41,8 @@ WHATSAPP_REPLACEMENTS = {
 
 # CSS replacements
 CSS_REPLACEMENTS = {
-    'href="styel.css"': 'href="style.css"',
-    "href='styel.css'": "href='style.css'",
+    'href="style.css"': 'href="style.css"',
+    "href='style.css'": "href='style.css'",
     'href="troly1.css"': 'href="table1.css"',
     "href='troly1.css'": "href='table1.css'",
 }
@@ -68,7 +68,7 @@ def find_html_files():
     html_files = []
     for path in BASE_DIR.rglob("*.html"):
         # استثني ملفات .git و node_modules و backups
-        if any(part.startswith(".") or part == "node_modules" or part == "backups" 
+        if any(part.startswith(".") or part == "node_modules" or part == "backups"
                for part in path.parts):
             continue
         html_files.append(path)
@@ -87,10 +87,8 @@ def add_theme_color(content):
     if 'name="theme-color"' in content or "name='theme-color'" in content:
         return content, False
 
-    # ضيف بعد الـ canonical أو بعد أي meta tag
     theme_line = '    <meta name="theme-color" content="#d4a843" />\n'
 
-    # جرب تضيف بعد canonical
     if '<link rel="canonical"' in content:
         content = re.sub(
             r'(<link rel="canonical"[^>]*>)\n?',
@@ -99,7 +97,6 @@ def add_theme_color(content):
         )
         return content, True
 
-    # أو بعد viewport
     if 'name="viewport"' in content:
         content = re.sub(
             r'(<meta[^>]*name="viewport"[^>]*>)\n?',
@@ -108,7 +105,6 @@ def add_theme_color(content):
         )
         return content, True
 
-    # أو بعد charset
     if 'charset="UTF-8"' in content:
         content = re.sub(
             r'(<meta[^>]*charset="UTF-8"[^>]*>)\n?',
@@ -129,7 +125,6 @@ def add_canonical(content, filename):
 
     canonical_line = f'    <link rel="canonical" href="{CANONICAL_URLS[filename]}" />\n'
 
-    # ضيف بعد theme-color أو viewport
     if 'name="theme-color"' in content:
         content = re.sub(
             r'(<meta[^>]*name="theme-color"[^>]*>)\n?',
@@ -150,10 +145,8 @@ def add_canonical(content, filename):
 
 def fix_favicon(content):
     """يصلح الـ favicon"""
-    # لو فيه favicon inline SVG فيه space
     if 'data:image/svg+xml' in content:
-        # غيّره لـ favicon عادي
-        old_pattern = r'<link[^>]*rel="icon"[^>]*href="data:image/svg\\+xml[^"]*"[^>]*>'
+        old_pattern = r'<link[^>]*rel="icon"[^>]*href="data:image/svg\+xml[^"]*"[^>]*>'
         new_favicon = '<link rel="icon" type="image/png" href="images/favicon.png" />'
         if re.search(old_pattern, content):
             content = re.sub(old_pattern, new_favicon, content)
@@ -164,20 +157,19 @@ def fix_duplicate_description(content, filename):
     """يمسح Description المكررة أو الفاضية"""
     fixed = False
 
-    # امسح description الفاضية
-    empty_desc = r'<meta[^>]*name=["']description["'][^>]*content=["']["'][^>]*>'
+    # امسح description الفاضية - using double quotes for the string
+    empty_desc = r"<meta[^>]*name=[\"']description[\"'][^>]*content=[\"'][\"'][^>]*>"
     if re.search(empty_desc, content, re.I):
         content = re.sub(empty_desc, '', content, flags=re.I)
         fixed = True
 
     # لو فيه أكتر من description، امسح التانية
-    desc_matches = list(re.finditer(r'<meta[^>]*name=["']description["'][^>]*>', content, re.I))
+    desc_pattern = r"<meta[^>]*name=[\"']description[\"'][^>]*>"
+    desc_matches = list(re.finditer(desc_pattern, content, re.I))
     if len(desc_matches) > 1:
-        # امسح من التانية للآخر
         for match in desc_matches[1:]:
             content = content[:match.start()] + content[match.end():]
         fixed = True
-        # نظف الخطوط الفاضية
         content = re.sub(r'\n\s*\n', '\n', content)
 
     return content, fixed
@@ -187,14 +179,10 @@ def fix_unclosed_p(content, filename):
     if filename != "index.html":
         return content, False
 
-    # عد الـ p tags
     open_p = len(re.findall(r'<p[\s>]', content, re.I))
     close_p = len(re.findall(r'</p>', content, re.I))
 
     if open_p > close_p:
-        # دور على آخر <p> مش مقفول
-        # نبحث عن <p ...> اللي مالهاش </p>
-        # الطريقة البسيطة: ندور على patterns شائعة
         patterns = [
             r'(معايير HACCP وسلامة الغذاء\.\.\.)\s*</div>',
             r'(معايير HACCP وسلامة الغذاء[^<]*)</div>',
@@ -292,7 +280,7 @@ def fix_file(filepath):
 
 def main():
     print("=" * 65)
-    print("  🔧 Royal Steel Egypt — Auto Fix Script")
+    print("  Royal Steel Egypt — Auto Fix Script")
     print("=" * 65)
 
     html_files = find_html_files()
@@ -333,7 +321,6 @@ def main():
     print("   2. تأكد إن كل حاجة شغالة صح")
     print("   3. اعمل git add . → git commit → git push")
 
-    # حفظ التقرير
     report_text = "\n".join(report_lines)
     report_path = BASE_DIR / "auto_fix_report.txt"
     with open(report_path, "w", encoding="utf-8") as f:

@@ -1,0 +1,81 @@
+Auto Fix Report — Royal Steel Egypt
+==================================================
+
+🔧 frontend\clients.html
+   ✓ [CSS] href="style.css" → href="style.css"
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\hala\hala.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\index.html
+   ✓ [CSS] href="style.css" → href="style.css"
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\ksara\ksara.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\makbs\makbs.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\mixer\mixer.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\products.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\qalep\qalep.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\table1\table1.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\troly1\troly1.html
+   ✓ [CSS] href="troly1.css" → href="table1.css"
+   ✓ [HTML] صلّح favicon SVG
+🔧 frontend\troly2\troly2.html
+   ✓ [HTML] صلّح favicon SVG
+🔧 المنتجات\clients.html
+   ✓ [CSS] href="style.css" → href="style.css"
+   ✓ [PHONE] +201145553855 → +201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [HTML] صلّح favicon SVG
+   ✓ [OG] صلّح OG URL → /clients.html
+🔧 المنتجات\hala.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/hala.html
+🔧 المنتجات\index.html
+   ✓ [CSS] href="style.css" → href="style.css"
+   ✓ [PHONE] +201145553855 → +201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [HTML] صلّح favicon SVG
+   ✓ [HTML] أقفل <p> اللي كان ناقص
+🔧 المنتجات\ksara.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/ksara.html
+🔧 المنتجات\makbs.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/makbs.html
+🔧 المنتجات\mixer.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [PHONE] 2011157093334 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/mixer.html
+🔧 المنتجات\products.html
+   ✓ [SEO] ضيف theme-color
+   ✓ [HTML] صلّح favicon SVG
+   ✓ [SEO] صلّح Description (مكررة/فاضية)
+🔧 المنتجات\qalep.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/qalep.html
+🔧 المنتجات\table1.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/table1.html
+🔧 المنتجات\troly1.html
+   ✓ [CSS] href="troly1.css" → href="table1.css"
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/troly1.html
+🔧 المنتجات\troly2.html
+   ✓ [PHONE] 201225585826 → 201115709334
+   ✓ [SEO] ضيف theme-color
+   ✓ [SEO] ضيف canonical → https://royal-steel.vercel.app/products/troly2.html
+   ✓ [SEO] صلّح Description (مكررة/فاضية)
+
+Total: 22 files | 54 changes
