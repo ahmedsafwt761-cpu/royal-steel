@@ -705,10 +705,19 @@ body.light-mode .header--scrolled {
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas: "content card";
   gap: 40px;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.hero__content {
+  grid-area: content;
+}
+
+.hero__card {
+  grid-area: card;
 }
 
 .hero__content {
@@ -2167,7 +2176,12 @@ textarea {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .hero__grid { grid-template-columns: 1fr; }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "card";
+  }
   .about { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
   .theme-toggle { top: auto; bottom: 24px; left: 24px; }
