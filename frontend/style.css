@@ -3644,26 +3644,3 @@ textarea {
   max-width: 500px;
   margin-inline: auto;
 }
-/* ================= HERO CARD LEFT FIX ================= */
-.hero__grid {
-  grid-template-columns: 0.9fr 1.1fr;
-  grid-template-areas: "card content";
-}
-
-.hero__content {
-  grid-area: content;
-}
-
-.hero__card {
-  grid-area: card;
-}
-
-/* Mobile: يفضل الترتيب العادي */
-@media (max-width: 1024px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "content"
-      "card";
-  }
-}
