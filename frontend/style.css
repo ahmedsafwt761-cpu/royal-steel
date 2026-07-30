@@ -705,8 +705,6 @@ body.light-mode .header--scrolled {
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  grid-template-areas: "content card";
-  grid-template-rows: auto;
   gap: 40px;
   align-items: center;
   position: relative;
@@ -714,12 +712,7 @@ body.light-mode .header--scrolled {
 }
 
 .hero__content {
-  grid-area: content;
   animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero__card {
-  grid-area: card;
 }
 
 .hero__content h1 {
@@ -818,7 +811,6 @@ body.light-mode .header--scrolled {
 
 /* ================= HERO CARD ================= */
 .hero__card {
-  grid-area: card;
   background: var(--gradient-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
@@ -1018,6 +1010,7 @@ body.light-mode .header--scrolled {
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1078,6 +1071,7 @@ body.light-mode .header--scrolled {
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2175,12 +2169,7 @@ textarea {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "content"
-      "card";
-  }
+  .hero__grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
   .theme-toggle { top: auto; bottom: 24px; left: 24px; }
