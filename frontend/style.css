@@ -705,6 +705,7 @@ body.light-mode .header--scrolled {
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas: "content card";
   gap: 40px;
   align-items: center;
   position: relative;
@@ -712,7 +713,12 @@ body.light-mode .header--scrolled {
 }
 
 .hero__content {
+  grid-area: content;
   animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero__card {
+  grid-area: card;
 }
 
 .hero__content h1 {
@@ -2169,7 +2175,12 @@ textarea {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .hero__grid { grid-template-columns: 1fr; }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "card";
+  }
   .about { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
   .theme-toggle { top: auto; bottom: 24px; left: 24px; }
