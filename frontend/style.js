@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = $("#loader");
     if (!loader) return;
 
-    const minLoadTime = 1500;
+    const minLoadTime = 800;
     const startTime = Date.now();
 
     const hideLoader = () => {
@@ -113,12 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= PARTICLES.JS =================
   const initParticles = () => {
+    if ("ontouchstart" in window && window.innerWidth < 768) return;
     if (typeof particlesJS === "undefined" || !$("#particles-js")) return;
 
     particlesJS("particles-js", {
       particles: {
         number: { 
-          value: 60, 
+          value: 25, 
           density: { enable: true, value_area: 900 } 
         },
         color: { 
@@ -137,14 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         line_linked: {
           enable: true,
-          distance: 180,
+          distance: 120,
           color: "#d4a843",
           opacity: 0.12,
           width: 1
         },
         move: {
           enable: true,
-          speed: 0.6,
+          speed: 0.4,
           direction: "none",
           random: true,
           straight: false,
@@ -451,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
       const scrolled = window.scrollY;
       if (scrolled < 800) {
-        const yPos = scrolled * 0.3;
+        const yPos = scrolled * 0.15;
         hero.style.backgroundPositionY = `${yPos}px`;
       }
     }, { passive: true });
@@ -460,7 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= CARD 3D TILT EFFECT =================
   const initCardTilt = () => {
-    if (prefersReducedMotion || window.innerWidth < 768) return;
+    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
 
     const cards = $$(".card, .feature, .testimonial-card");
 
@@ -808,7 +809,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= MAGNETIC BUTTONS =================
   const initMagneticButtons = () => {
-    if (prefersReducedMotion || window.innerWidth < 768) return;
+    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
 
     $$(".btn, .whatsapp-float").forEach(btn => {
       btn.addEventListener("mousemove", (e) => {
@@ -828,7 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= CURSOR GLOW EFFECT =================
   const initCursorGlow = () => {
-    if (prefersReducedMotion || window.innerWidth < 1024) return;
+    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
 
     const cursor = document.createElement("div");
     cursor.className = "cursor-glow";
