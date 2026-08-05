@@ -1,0 +1,20 @@
+:root{
+  --bg: #0b0f14;
+  --panel: #111824;
+  --panel2:#0f1520;
+  --text:#e8eef6;
+  --muted:#a8b3c2;
+  --line: rgba(255,255,255,.08);
+  --accent:#d6b25e;
+  --accent2:#7bd4ff;
+  --shadow: 0 16px 40px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+
+body{
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(214,178,94,.18), transparent 60%),
+              radial-gradient(800px 500px at 10% 0%, rgba(123,212,255,.12), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+
