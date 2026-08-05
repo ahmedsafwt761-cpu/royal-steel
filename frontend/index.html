@@ -29,25 +29,72 @@
     <meta name="twitter:image" content="https://royal-steel.vercel.app/images/og-image.webp" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32" />
 
-    
-
-    <!-- Preconnect -->
+    <!-- ⚡ Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- ⚡ Google Fonts — preload (مش render-blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
-    <!-- External Libraries -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- ⚡ Inline Critical CSS — الجزء اللي فوق الفولد بيتحمل فورًا -->
+    <style>
+      :root{--bg-primary:#0a0a0a;--gold:#d4a843;--gold-light:#f0d78c;--text-primary:#fff;--text-secondary:#ccc}
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{font-family:'Cairo',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;direction:rtl}
+      a{text-decoration:none;color:inherit}
+      img{max-width:100%;height:auto;display:block}
+      .container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
+      /* Navbar critical */
+      .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);padding:1rem 0;border-bottom:1px solid rgba(212,168,67,0.2)}
+      .navbar .container{display:flex;justify-content:space-between;align-items:center}
+      .logo{font-size:1.5rem;font-weight:800;color:var(--gold)}
+      .nav-links{display:flex;gap:2rem;list-style:none}
+      .nav-links a{color:var(--text-secondary);font-weight:600;transition:color 0.3s}
+      .nav-links a:hover{color:var(--gold)}
+      .mobile-menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+      /* Hero critical */
+      .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px;position:relative;overflow:hidden}
+      .hero-content{position:relative;z-index:2}
+      .hero h1{font-size:3rem;font-weight:800;margin-bottom:1rem;line-height:1.2}
+      .hero h1 span{color:var(--gold)}
+      .hero p{font-size:1.2rem;color:var(--text-secondary);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+      .btn{display:inline-block;padding:1rem 2.5rem;background:var(--gold);color:#0a0a0a;font-weight:700;border-radius:50px;transition:transform 0.3s,box-shadow 0.3s}
+      .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,168,67,0.3)}
+      /* Particles placeholder */
+      #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+      @media(max-width:768px){.hero h1{font-size:2rem}.nav-links{display:none}.mobile-menu-btn{display:block}}
+    </style>
+
+    <!-- ⚡ Preload style.css asynchronously -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <!-- Swiper CSS — preload -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <!-- Swiper JS — defer -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp + Typed — defer -->
     <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js" defer></script>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Particles — بس على Desktop -->
+    <script>
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        const s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+    </script>
+
+    <!-- Google Analytics — async -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -55,6 +102,7 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
+
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
@@ -81,44 +129,44 @@
     }
     </script>
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "ضمان الماكينة قد إيه؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "الضمان بيكون سنة كاملة من استلام الماكينة وبيكون ضد عيوب الصناعة."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "هل بتجيبوا قطع غيار؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "أيوه، قطع الغيار متوفرة على مدار السنة — شفرات، موتورات، جوانات، لوحات كهربائية، وكل مايلزم."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "الماكينة بتتصنع في قد إيه؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "أغلب الماكينات مدة تصنيعها بتكون من 4 إلى 6 أسابيع على حسب الماكينة."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "هل بتعملوا تركيب في المحافظات؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "أيوه، بنركب في كل المحافظات — القاهرة، الإسكندرية، الدلتا، الصعيد، وسيناء."
-            }
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ضمان الماكينة قد إيه؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الضمان بيكون سنة كاملة من استلام الماكينة وبيكون ضد عيوب الصناعة."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Question",
+          "name": "هل بتجيبوا قطع غيار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أيوه، قطع الغيار متوفرة على مدار السنة — شفرات، موتورات، جوانات، لوحات كهربائية، وكل مايلزم."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "الماكينة بتتصنع في قد إيه؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أغلب الماكينات مدة تصنيعها بتكون من 4 إلى 6 أسابيع على حسب الماكينة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل بتعملوا تركيب في المحافظات؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أيوه، بنركب في كل المحافظات — القاهرة، الإسكندرية، الدلتا، الصعيد، وسيناء."
+          }
+        }
+      ]
+    }
     </script>
   </head>
 
