@@ -261,7 +261,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--gradient-gold);
   z-index: 9999;
   width: 0%;
-  transition: width 0.1s linear;
+  transition: transform /* was: width */ 0.1s linear;
   box-shadow: 0 0 10px rgba(212,168,67,0.5);
 }
 
@@ -394,7 +394,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 2px;
   background: var(--gradient-gold);
   border-radius: 99px;
-  transition: width var(--transition-base);
+  transition: transform /* was: width */ var(--transition-base);
 }
 
 .topbar__links a:hover {
@@ -1887,7 +1887,7 @@ textarea {
   height: 2px;
   background: var(--accent-gold);
   border-radius: 99px;
-  transition: width var(--transition-base);
+  transition: transform /* was: width */ var(--transition-base);
 }
 
 .footer__links a:hover {

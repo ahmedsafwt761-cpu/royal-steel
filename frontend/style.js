@@ -442,66 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   initScrollTop();
 
-  // ================= PARALLAX EFFECT =================
-  const initParallax = () => {
-    if (prefersReducedMotion) return;
-
-    const hero = $(".hero");
-    if (!hero) return;
-
-    window.addEventListener("scroll", () => {
-      const scrolled = window.scrollY;
-      if (scrolled < 800) {
-        const yPos = scrolled * 0.15;
-        hero.style.backgroundPositionY = `${yPos}px`;
-      }
-    }, { passive: true });
-  };
-  initParallax();
-
-  // ================= CARD 3D TILT EFFECT =================
-  const initCardTilt = () => {
-    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
-
-    const cards = $$(".card, .feature, .testimonial-card");
-
-    cards.forEach(card => {
-      let frame = null;
-      let isHovering = false;
-
-      card.addEventListener("mouseenter", () => { 
-        isHovering = true; 
-      });
-
-      card.addEventListener("mousemove", (e) => {
-        if (!isHovering || prefersReducedMotion) return;
-        if (frame) return;
-
-        frame = requestAnimationFrame(() => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          const rotateX = ((y - rect.height / 2) / rect.height) * -6;
-          const rotateY = ((x - rect.width / 2) / rect.width) * 6;
-
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-          frame = null;
-        });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        isHovering = false;
-        if (frame) {
-          cancelAnimationFrame(frame);
-          frame = null;
-        }
-        card.style.transform = "";
-      });
-    });
-  };
-  initCardTilt();
-
   // ================= RIPPLE EFFECT ON CARDS =================
   const initRipple = () => {
     $$(".card, .feature, .btn").forEach(el => {
@@ -526,7 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   };
-  initRipple();
 
   // ================= FAQ ACCORDION =================
   const initFAQ = () => {
@@ -807,70 +746,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   initFooterYear();
 
-  // ================= MAGNETIC BUTTONS =================
-  const initMagneticButtons = () => {
-    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
-
-    $$(".btn, .whatsapp-float").forEach(btn => {
-      btn.addEventListener("mousemove", (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-
-        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
-      });
-
-      btn.addEventListener("mouseleave", () => {
-        btn.style.transform = "";
-      });
-    });
-  };
-  initMagneticButtons();
-
-  // ================= CURSOR GLOW EFFECT =================
-  const initCursorGlow = () => {
-    if (prefersReducedMotion || window.innerWidth < 1024 || "ontouchstart" in window) return;
-
-    const cursor = document.createElement("div");
-    cursor.className = "cursor-glow";
-    cursor.style.cssText = `
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,168,67,0.06), transparent 70%);
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-      opacity: 0;
-    `;
-    document.body.appendChild(cursor);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.opacity = "1";
-    });
-
-    document.addEventListener("mouseleave", () => {
-      cursor.style.opacity = "0";
-    });
-
-    const animateCursor = () => {
-      cursorX += (mouseX - cursorX) * 0.08;
-      cursorY += (mouseY - cursorY) * 0.08;
-      cursor.style.left = cursorX + "px";
-      cursor.style.top = cursorY + "px";
-      requestAnimationFrame(animateCursor);
-    };
-    animateCursor();
-  };
-  initCursorGlow();
-
   // ================= INTERSECTION OBSERVER FOR STATS =================
   const initStatsObserver = () => {
     const statsSection = $("#home");
@@ -967,8 +842,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   initCatalogDownload();
-
-
 
   // ================= CLIENTS TABS =================
   const initClientsTabs = () => {
