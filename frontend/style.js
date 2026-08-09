@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = $("#loader");
     if (!loader) return;
 
-    const minLoadTime = 300; // كان 800 → خليته 300
+    const minLoadTime = 0; // كان 800 → خليته 300
     const startTime = Date.now();
 
     const hideLoader = () => {
