@@ -190,7 +190,7 @@ initParticles();
       slidesPerView: 1,
       spaceBetween: 24,
       loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
       pagination: { el: ".swiper-pagination", clickable: true, dynamicBullets: true },
       breakpoints: { 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 30 } },
       effect: "slide",
