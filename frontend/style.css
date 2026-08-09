@@ -1016,7 +1016,6 @@ body.light-mode .header--scrolled {
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1077,7 +1076,6 @@ body.light-mode .header--scrolled {
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -3656,25 +3654,4 @@ textarea {
   margin: 0 0 24px;
   max-width: 500px;
   margin-inline: auto;
-}
-/* يثبت aspect ratio لكل الصور */
-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: attr(width) / attr(height);
-}
-
-/* لو الصور عندك 4:3 */
-.card img,
-.machine-card__img img,
-.ph__img img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-/* Testimonial avatars دائرية */
-.testimonial__avatar img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
 }
