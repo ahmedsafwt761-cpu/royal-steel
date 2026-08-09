@@ -3655,3 +3655,24 @@ textarea {
   max-width: 500px;
   margin-inline: auto;
 }
+/* يثبت aspect ratio لكل الصور */
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* لو الصور عندك 4:3 */
+.card img,
+.machine-card__img img,
+.ph__img img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Testimonial avatars دائرية */
+.testimonial__avatar img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}

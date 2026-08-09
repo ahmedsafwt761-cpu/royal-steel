@@ -97,28 +97,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= PARTICLES.JS =================
   const initParticles = () => {
-    if ("ontouchstart" in window && window.innerWidth < 768) return;
-    if (typeof particlesJS === "undefined" || !$("#particles-js")) return;
+  const container = $("#particles-js");
+  if (!container) return;
 
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 25, density: { enable: true, value_area: 900 } },
-        color: { value: ["#d4a843", "#7ba3c9", "#ffffff"] },
-        shape: { type: "circle" },
-        opacity: { value: 0.3, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false } },
-        size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.5, sync: false } },
-        line_linked: { enable: true, distance: 120, color: "#d4a843", opacity: 0.12, width: 1 },
-        move: { enable: true, speed: 0.4, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: true, rotateX: 600, rotateY: 1200 } }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-        modes: { grab: { distance: 160, line_linked: { opacity: 0.3 } }, push: { particles_nb: 4 }, repulse: { distance: 100, duration: 0.4 } }
-      },
-      retina_detect: true
-    });
-  };
-  initParticles();
+  // اخفيه نهائيًا على الموبايل
+  if ("ontouchstart" in window && window.innerWidth < 768) {
+    container.style.display = "none";
+    return;
+  }
+
+  // اظهره على الديسكتوب
+  container.style.display = "";
+
+  if (typeof particlesJS === "undefined") return;
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 25, density: { enable: true, value_area: 900 } },
+      color: { value: ["#d4a843", "#7ba3c9", "#ffffff"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.3, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false } },
+      size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.5, sync: false } },
+      line_linked: { enable: true, distance: 120, color: "#d4a843", opacity: 0.12, width: 1 },
+      move: { enable: true, speed: 0.4, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: true, rotateX: 600, rotateY: 1200 } }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+      modes: { grab: { distance: 160, line_linked: { opacity: 0.3 } }, push: { particles_nb: 4 }, repulse: { distance: 100, duration: 0.4 } }
+    },
+    retina_detect: true
+  });
+};
+initParticles();
 
   // ================= TYPED.JS =================
   const initTyped = () => {

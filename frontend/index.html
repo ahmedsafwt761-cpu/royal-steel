@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <!doctype html>
-<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -180,7 +178,7 @@
     <header class="header">
       <div class="container header__inner">
         <a class="brand" href="#" aria-label="Royal Steel Egypt - الصفحة الرئيسية">
-          <img loading="lazy" src="images/logo.webp" alt="Royal Steel Logo" class="brand__logo-img" width="48" height="48">
+          <img src="images/logo.webp" alt="Royal Steel Logo" class="brand__logo-img" width="48" height="48" fetchpriority="high">
           <div class="brand__text">
             <div class="brand__name">Royal Steel</div>
             <div class="brand__tag">Food Processing Machinery</div>
@@ -211,7 +209,7 @@
     <!-- Hero Section -->
     <main id="home">
       <section class="hero">
-        <div id="particles-js" class="particles-container"></div>
+        <div id="particles-js" class="particles-container" style="display:none"></div>
         <div class="container hero__grid">
           <div class="hero__content">
             <h1>حلول تصنيع <span class="accent typed-text"></span> بجودة عالية</h1>
@@ -619,7 +617,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"ماكينة الميكسر شغالة ممتاز من سنة ونص، جودة التصنيع عالية جداً والدعم الفني سريع. فريق محترم وبيعرفوا شغلهم."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/Nobaria.webp" width="400" height="300" alt="مصنع نوبارية" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/Nobaria.webp" width="400" height="300" alt="مصنع نوبارية"></div>
                     <div>
                       <div class="testimonial__name">مصنع نوبارية</div>
                       <!-- <div class="testimonial__company">مصنع الأمل للحوم - القاهرة</div> -->
@@ -632,7 +630,7 @@
                   <div class="testimonial__stars">★★★★★</div>
                   <p class="testimonial__text">"خط الإنتاج اللي ركبولنا غيّر شكل المصنع، الإنتاجية زادت 40% والجودة ثابتة. التزام في المواعيد والصيانة دورية."</p>
                   <div class="testimonial__author">
-                    <div class="testimonial__avatar"><img src="images/clients/fresh-farm.webp" width="400" height="300" alt="عميل" loading="lazy"></div>
+                    <div class="testimonial__avatar"><img src="images/clients/fresh-farm.webp" width="400" height="300" alt="عميل"></div>
                     <div>
                       <div class="testimonial__name">مصنع فريش فارم</div>
                       <!-- <div class="testimonial__company">شركة النور للصناعات الغذائية - الإسكندرية</div> -->
@@ -846,8 +844,9 @@
                 <h3>موقعنا</h3>
                 <div class="map-embed">
                   <iframe title="Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789!2d31.1234!3d30.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzI0LjQiTiAzMcKwMDcnMjQuNCJF!5e0!3m2!1sar!2seg!4v1234567890" 
+                    width="100%" 
                     height="200" 
-                    style="width:100%; border:0; border-radius:12px;"
+                    style="border:0; border-radius:12px;"
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
